@@ -29,12 +29,12 @@ const onClickRow = jest.fn()
 
 describe("<EmailList />", () => {
   it("Must render emailList component", () => {
-
     const component = shallow(<EmailList
       emails={emailList}
       onClickRow={onClickRow}
     />)
 
     expect(component).toMatchSnapshot()
+    expect(component.find("EmailRow").length).toEqual(1)
   })
 })

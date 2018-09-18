@@ -34,12 +34,12 @@ const emailList = [
   {
     title: "monit alert -- Exists delayed_job",
     id: 1,
-    body: "<h1>monit alert -- Exists delayed_job</h1>"
+    body: <h6>monit alert -- Exists delayed_job</h6>
   },
   {
     title: "monit alert -- Exists delayed_job 2",
     id: 2,
-    body: "<h1>monit alert -- Exists delayed_job 2</h1>"
+    body: <h6>monit alert -- Exists delayed_job 2</h6>
   },
   {
     title: "monit alert -- Exists delayed_job 3",
