@@ -1,59 +1,39 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Row, Col } from "reactstrap";
 
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 import { SideMenu } from "./components/sideMenu.js";
 import { EmailList, EmailPreview } from "./components/emailList.js";
+import { get, post } from "./apis/apiHelper.js";
 
 const menues = [
   {
     title: "Inbox",
     id: 1,
-    isActive: true
+    isActive: true,
+    type: "inbox"
   },
   {
     title: "Sent",
     id: 2,
-    isActive: false
+    isActive: false,
+    type: "sent"
   },
   {
     title: "Draft",
     id: 3,
-    isActive: false
+    isActive: false,
+    type: "draft"
   },
   {
     title: "Trash",
     id: 4,
-    isActive: false
+    isActive: false,
+    type: "trash"
   }
 ];
-
-const emailList = [
-  {
-    title: "monit alert -- Exists delayed_job",
-    id: 1,
-    body: <h6>monit alert -- Exists delayed_job</h6>
-  },
-  {
-    title: "monit alert -- Exists delayed_job 2",
-    id: 2,
-    body: <h6>monit alert -- Exists delayed_job 2</h6>
-  },
-  {
-    title: "monit alert -- Exists delayed_job 3",
-    id: 3,
-    body: "<h1>monit alert -- Exists delayed_job 3</h1>"
-  },
-  {
-    title: "monit alert -- Exists delayed_job 4",
-    id: 4,
-    body: "<h1>monit alert -- Exists delayed_job 4</h1>"
-  }
-];
-
-
 
 class App extends Component {
   constructor(props) {
@@ -61,16 +41,52 @@ class App extends Component {
 
     // default State
     this.state = {
-      selectedRow: emailList[0]
-    }
+      selectedRow: null,
+      emailList: []
+    };
 
     this.onClick = this.onClick.bind(this);
+    this.sendEmail = this.sendEmail.bind(this);
+    this.getEmails = this.getEmails.bind(this);
+  }
+
+  getEmails(type) {
+    return () => {
+      get(`mails/${type}`, "", { Authorization: this.props.token })
+        .then(jsonResponse => {
+          this.setState({ emailList: jsonResponse.data });
+        })
+        .catch(errorResponse => {
+          console.log("2222222222222222", errorResponse);
+        });
+    };
+  }
+
+  sendEmail(to, subject, body) {
+    post("mails", { to, subject, body }, { Authorization: this.props.token })
+    .then(jsonResponse => {
+      console.log("Sent email", jsonResponse);
+      // this.setState({ emailList: jsonResponse.data });
+    })
+    .catch(errorResponse => {
+      console.log("2222222222222222", errorResponse);
+    });
+  }
+
+  componentDidMount() {
+    get("mails/inbox", "", { Authorization: this.props.token })
+      .then(jsonResponse => {
+        this.setState({ emailList: jsonResponse.data });
+      })
+      .catch(errorResponse => {
+        console.log("2222222222222222", errorResponse);
+      });
   }
 
   onClick(selectedRow) {
     return () => {
-      this.setState({ selectedRow })
-    }
+      this.setState({ selectedRow });
+    };
   }
 
   render() {
@@ -85,14 +101,18 @@ class App extends Component {
             <Col md={3}>
               <SideMenu
                 menues={menues}
+                sendEmail={this.sendEmail}
+                getEmails={this.getEmails}
               />
             </Col>
             <Col md={9}>
-              <EmailList emails={emailList} onClickRow={this.onClick}/>
-              <EmailPreview email={this.state.selectedRow}/>
+              <EmailList
+                emails={this.state.emailList}
+                onClickRow={this.onClick}
+              />
+              <EmailPreview email={this.state.selectedRow} />
             </Col>
           </Row>
-
         </div>
       </div>
     );

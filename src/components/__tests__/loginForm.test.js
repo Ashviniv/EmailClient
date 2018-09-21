@@ -14,8 +14,45 @@ describe("<LoginForm />", () => {
     expect(component.find("Button").length).toEqual(1);
   })
 
-  it("Must have email and password fields along with submit button")
-  it("Must display validation error if empty email or password")
-  it("Must display invalid format error if entered invalid email")
-  it("Must login user if enetered correct email and password")
+  it("Must have email and password fields along with submit button", () => {
+  })
+
+  it("Must display validation error if empty email", () => {
+    const handleLoginUser = jest.fn();
+    const component = shallow(<LoginForm handleLoginUser={handleLoginUser} />);
+
+    component
+      .find("Input[type='email']")
+      .simulate("change", { target: { value: "", name: "email" } });
+
+    expect(component.state("errors")).toEqual({
+      email: "Must enter an email address.",
+      password: ""
+    });
+  })
+
+  it("Must display invalid format error if entered invalid email", () => {
+    const handleLoginUser = jest.fn();
+    const component = shallow(<LoginForm handleLoginUser={handleLoginUser} />);
+
+    component
+       .find("Input[type='email']")
+       .simulate("change", { target: { value: "test", name: "email" } });
+
+    expect(component.state("errors")).toEqual({
+      email: "Must enter a valid email address.",
+      password: ""
+    });
+  })
+
+  it.only("Must login user if enetered correct email and password", () => {
+    const handleLoginUser = jest.fn();
+    const component = shallow(<LoginForm handleLoginUser={handleLoginUser} />);
+
+    component
+      .find("Form")
+      .simulate("submit", { preventDefault: jest.fn() });
+
+    expect(handleLoginUser).not.toBeCalledWith()
+  })
 })

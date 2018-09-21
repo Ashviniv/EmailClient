@@ -33,13 +33,13 @@ class LoginForm extends PureComponent {
 
   _handleFormSubmit(e) {
     let { email } = this.state.errors;
-
+    let isValidEmail = this._validateEmail()
     e.preventDefault();
 
-    if(email) {
-      return false
-    } else {
+    if(isValidEmail) {
       this.props.handleLoginUser(this.state.email, this.state.password)
+    } else {
+      return false
     }
   }
 
@@ -63,6 +63,8 @@ class LoginForm extends PureComponent {
         email: emailErrorMsg
       }
     });
+
+    return emailErrorMsg ? false : true
   }
 
   _handleInputChange(e) {
@@ -93,7 +95,7 @@ class LoginForm extends PureComponent {
                 name="email"
                 id="exampleEmail"
                 placeholder="Enter any valid email Address"
-                invalid={errors.email}
+                invalid={errors.email ?  true : false}
                 onChange={this._handleInputChange}
               />
               <FormFeedback className="text-justify">

@@ -51,6 +51,7 @@ ShallowWrapper {
                     Login Form
           </h4>
           <Form
+                    onSubmit={[Function]}
                     tag="form"
           >
                     <FormGroup
@@ -74,9 +75,16 @@ ShallowWrapper {
                               </Label>
                               <Input
                                         id="exampleEmail"
+                                        invalid={false}
                                         name="email"
-                                        placeholder="with a placeholder"
+                                        onChange={[Function]}
+                                        placeholder="Enter any valid email Address"
                                         type="email"
+                              />
+                              <FormFeedback
+                                        className="text-justify"
+                                        tag="div"
+                                        valid={undefined}
                               />
                     </FormGroup>
                     <FormGroup
@@ -101,7 +109,8 @@ ShallowWrapper {
                               <Input
                                         id="examplePassword"
                                         name="password"
-                                        placeholder="password placeholder"
+                                        onChange={[Function]}
+                                        placeholder="any password"
                                         type="password"
                               />
                     </FormGroup>
@@ -169,6 +178,7 @@ ShallowWrapper {
               Login Form
 </h4>,
             <Form
+              onSubmit={[Function]}
               tag="form"
 >
               <FormGroup
@@ -192,9 +202,16 @@ ShallowWrapper {
                             </Label>
                             <Input
                                           id="exampleEmail"
+                                          invalid={false}
                                           name="email"
-                                          placeholder="with a placeholder"
+                                          onChange={[Function]}
+                                          placeholder="Enter any valid email Address"
                                           type="email"
+                            />
+                            <FormFeedback
+                                          className="text-justify"
+                                          tag="div"
+                                          valid={undefined}
                             />
               </FormGroup>
               <FormGroup
@@ -219,7 +236,8 @@ ShallowWrapper {
                             <Input
                                           id="examplePassword"
                                           name="password"
-                                          placeholder="password placeholder"
+                                          onChange={[Function]}
+                                          placeholder="any password"
                                           type="password"
                             />
               </FormGroup>
@@ -290,9 +308,16 @@ ShallowWrapper {
                   </Label>
                   <Input
                                     id="exampleEmail"
+                                    invalid={false}
                                     name="email"
-                                    placeholder="with a placeholder"
+                                    onChange={[Function]}
+                                    placeholder="Enter any valid email Address"
                                     type="email"
+                  />
+                  <FormFeedback
+                                    className="text-justify"
+                                    tag="div"
+                                    valid={undefined}
                   />
 </FormGroup>,
                 <FormGroup
@@ -317,7 +342,8 @@ ShallowWrapper {
                   <Input
                                     id="examplePassword"
                                     name="password"
-                                    placeholder="password placeholder"
+                                    onChange={[Function]}
+                                    placeholder="any password"
                                     type="password"
                   />
 </FormGroup>,
@@ -335,6 +361,7 @@ ShallowWrapper {
                   </Button>
 </FormGroup>,
               ],
+              "onSubmit": [Function],
               "tag": "form",
             },
             "ref": null,
@@ -363,9 +390,16 @@ ShallowWrapper {
 </Label>,
                     <Input
                       id="exampleEmail"
+                      invalid={false}
                       name="email"
-                      placeholder="with a placeholder"
+                      onChange={[Function]}
+                      placeholder="Enter any valid email Address"
                       type="email"
+/>,
+                    <FormFeedback
+                      className="text-justify"
+                      tag="div"
+                      valid={undefined}
 />,
                   ],
                   "tag": "div",
@@ -399,12 +433,28 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "id": "exampleEmail",
+                      "invalid": false,
                       "name": "email",
-                      "placeholder": "with a placeholder",
+                      "onChange": [Function],
+                      "placeholder": "Enter any valid email Address",
                       "type": "email",
                     },
                     "ref": null,
                     "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "",
+                      "className": "text-justify",
+                      "tag": "div",
+                      "valid": undefined,
+                    },
+                    "ref": null,
+                    "rendered": "",
                     "type": [Function],
                   },
                 ],
@@ -435,7 +485,8 @@ ShallowWrapper {
                     <Input
                       id="examplePassword"
                       name="password"
-                      placeholder="password placeholder"
+                      onChange={[Function]}
+                      placeholder="any password"
                       type="password"
 />,
                   ],
@@ -471,7 +522,8 @@ ShallowWrapper {
                     "props": Object {
                       "id": "examplePassword",
                       "name": "password",
-                      "placeholder": "password placeholder",
+                      "onChange": [Function],
+                      "placeholder": "any password",
                       "type": "password",
                     },
                     "ref": null,
@@ -581,6 +633,7 @@ ShallowWrapper {
                         Login Form
             </h4>
             <Form
+                        onSubmit={[Function]}
                         tag="form"
             >
                         <FormGroup
@@ -604,9 +657,16 @@ ShallowWrapper {
                                     </Label>
                                     <Input
                                                 id="exampleEmail"
+                                                invalid={false}
                                                 name="email"
-                                                placeholder="with a placeholder"
+                                                onChange={[Function]}
+                                                placeholder="Enter any valid email Address"
                                                 type="email"
+                                    />
+                                    <FormFeedback
+                                                className="text-justify"
+                                                tag="div"
+                                                valid={undefined}
                                     />
                         </FormGroup>
                         <FormGroup
@@ -631,7 +691,8 @@ ShallowWrapper {
                                     <Input
                                                 id="examplePassword"
                                                 name="password"
-                                                placeholder="password placeholder"
+                                                onChange={[Function]}
+                                                placeholder="any password"
                                                 type="password"
                                     />
                         </FormGroup>
@@ -699,6 +760,7 @@ ShallowWrapper {
                 Login Form
 </h4>,
               <Form
+                onSubmit={[Function]}
                 tag="form"
 >
                 <FormGroup
@@ -722,9 +784,16 @@ ShallowWrapper {
                                 </Label>
                                 <Input
                                                 id="exampleEmail"
+                                                invalid={false}
                                                 name="email"
-                                                placeholder="with a placeholder"
+                                                onChange={[Function]}
+                                                placeholder="Enter any valid email Address"
                                                 type="email"
+                                />
+                                <FormFeedback
+                                                className="text-justify"
+                                                tag="div"
+                                                valid={undefined}
                                 />
                 </FormGroup>
                 <FormGroup
@@ -749,7 +818,8 @@ ShallowWrapper {
                                 <Input
                                                 id="examplePassword"
                                                 name="password"
-                                                placeholder="password placeholder"
+                                                onChange={[Function]}
+                                                placeholder="any password"
                                                 type="password"
                                 />
                 </FormGroup>
@@ -820,9 +890,16 @@ ShallowWrapper {
                     </Label>
                     <Input
                                         id="exampleEmail"
+                                        invalid={false}
                                         name="email"
-                                        placeholder="with a placeholder"
+                                        onChange={[Function]}
+                                        placeholder="Enter any valid email Address"
                                         type="email"
+                    />
+                    <FormFeedback
+                                        className="text-justify"
+                                        tag="div"
+                                        valid={undefined}
                     />
 </FormGroup>,
                   <FormGroup
@@ -847,7 +924,8 @@ ShallowWrapper {
                     <Input
                                         id="examplePassword"
                                         name="password"
-                                        placeholder="password placeholder"
+                                        onChange={[Function]}
+                                        placeholder="any password"
                                         type="password"
                     />
 </FormGroup>,
@@ -865,6 +943,7 @@ ShallowWrapper {
                     </Button>
 </FormGroup>,
                 ],
+                "onSubmit": [Function],
                 "tag": "form",
               },
               "ref": null,
@@ -893,9 +972,16 @@ ShallowWrapper {
 </Label>,
                       <Input
                         id="exampleEmail"
+                        invalid={false}
                         name="email"
-                        placeholder="with a placeholder"
+                        onChange={[Function]}
+                        placeholder="Enter any valid email Address"
                         type="email"
+/>,
+                      <FormFeedback
+                        className="text-justify"
+                        tag="div"
+                        valid={undefined}
 />,
                     ],
                     "tag": "div",
@@ -929,12 +1015,28 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "id": "exampleEmail",
+                        "invalid": false,
                         "name": "email",
-                        "placeholder": "with a placeholder",
+                        "onChange": [Function],
+                        "placeholder": "Enter any valid email Address",
                         "type": "email",
                       },
                       "ref": null,
                       "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": "",
+                        "className": "text-justify",
+                        "tag": "div",
+                        "valid": undefined,
+                      },
+                      "ref": null,
+                      "rendered": "",
                       "type": [Function],
                     },
                   ],
@@ -965,7 +1067,8 @@ ShallowWrapper {
                       <Input
                         id="examplePassword"
                         name="password"
-                        placeholder="password placeholder"
+                        onChange={[Function]}
+                        placeholder="any password"
                         type="password"
 />,
                     ],
@@ -1001,7 +1104,8 @@ ShallowWrapper {
                       "props": Object {
                         "id": "examplePassword",
                         "name": "password",
-                        "placeholder": "password placeholder",
+                        "onChange": [Function],
+                        "placeholder": "any password",
                         "type": "password",
                       },
                       "ref": null,
